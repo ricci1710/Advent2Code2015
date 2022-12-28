@@ -26,10 +26,10 @@ describe('Test Class Day02', () => {
     expect(result).toEqual(48);
   });
   test('calcPartTwo with life data', () => {
-    const storeData = MOCK_LIFE_DATA_DAY_02.split('');
+    const storeData = MOCK_LIFE_DATA_DAY_02.split('\n');
     const day01 = new Day02(storeData);
     const result = day01.calcPartTwo();
     // You have completed Day 2!
-    expect(result).toEqual(1771);
+    expect(result).toEqual(3842356);
   });
 });

@@ -45,3 +45,5 @@ zum Einwickeln des Geschenks plus 1*1*10 = 10 Fuß Band für die Schleife, also 
 ```
 
 Wie viele Meter Band sollten sie insgesamt bestellen?
+
+Formel Umfang Rechteck: U = 2 · a + 2 · b.
