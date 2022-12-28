@@ -2,7 +2,6 @@ class Day01 {
   constructor(storeData) {
     this.storeData = storeData;
   }
-
   calcPartOne() {
     let result = 0;
     this.storeData.forEach((item) => {
@@ -10,7 +9,6 @@ class Day01 {
     });
     return result;
   }
-
   calcPartTwo() {
     let result = 0;
     for (let count = 0; count < this.storeData.length; count += 1) {
@@ -24,6 +22,4 @@ class Day01 {
     return result;
   }
 }
-
 export default Day01;
-//module.exports = Day01;
