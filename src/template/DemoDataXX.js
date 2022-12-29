@@ -1,1 +1,1 @@
-export const MOCK_DEMO_DATA_DAY_XX = `abcdef`;
+export const MOCK_DEMO_DATA_DAY_XX = ``;

@@ -2,7 +2,7 @@ import DayXX from "./DayXX";
 import {MOCK_DEMO_DATA_DAY_XX} from "./DemoDataXX";
 import {MOCK_LIFE_DATA_DAY_XX} from "./LifeDataXX";
 
-describe('Test Class DayXX', () => {
+describe('Test Class Day05', () => {
   test('constructor', () => {
     const day = new DayXX();
     expect(day).toBeDefined();

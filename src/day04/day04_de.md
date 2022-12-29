@@ -23,3 +23,7 @@ https://de.wikipedia.org/wiki/Message-Digest_Algorithm_5
 https://en.wikipedia.org/wiki/Hexadecimal
 
 Ihre Rätseleingabe lautet **bgvyzdsv**.
+
+**--- Zweiter Teil ---**
+
+Finde nun eines, das mit sechs Nullen beginnt.
