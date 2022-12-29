@@ -5,8 +5,12 @@ class Day04 {
 
   calcPartOne() {
     let result = 0;
-    this.storeData.forEach((item) => {
-    });
+    let found = true;
+
+    do {
+      const hexValue = md5(this.storeData + result.toString());
+    } while (found);
+
     return result;
   }
 
