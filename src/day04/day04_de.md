@@ -18,4 +18,8 @@ Wenn Ihr geheimer Schlüssel pqrstuv ist, ist die niedrigste Zahl, mit der er si
 der mit fünf Nullen beginnt, 1048970; das heißt, der MD5-Hash von pqrstuv1048970 sieht aus wie 000006136ef....
 ```
 
+https://de.wikipedia.org/wiki/Message-Digest_Algorithm_5
+
+https://en.wikipedia.org/wiki/Hexadecimal
+
 Ihre Rätseleingabe lautet **bgvyzdsv**.
