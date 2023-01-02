@@ -11,13 +11,13 @@ describe('Test Class Day05', () => {
     const storeData = MOCK_DEMO_DATA_DAY_05.split('\n');
     const day = new Day05(storeData);
     const result = day.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(result).toEqual(2);
   });
   test('calcPartOne with life data', () => {
     const storeData = MOCK_LIFE_DATA_DAY_05.split('\n');
     const day = new Day05(storeData);
     const result = day.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(result).toEqual(236);
   });
   test('calcPartTwo with demo data', () => {
     const storeData = MOCK_DEMO_DATA_DAY_05.split('\n');
