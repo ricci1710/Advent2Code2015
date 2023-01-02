@@ -59,20 +59,10 @@ class Day05 {
    * even aaa.
    */
   rulesPartTow(item) {
-   const letters = item.split('');
-
-   const letterOne = letters[0];
-   const letterTwo = letters[1];
-
-   const pair = letterOne+letterTwo;
-   const firstPair = item.indexOf(pair);
-   const lastPair = item.lastIndexOf(pair);
-
-   console.log(firstPair, lastPair);
-
-   return true;
+    const repeat=item.match(/([a-z][a-z])[a-z]*\1/);
+    const zxz=item.match(/([a-z])[a-z]\1/);
+    return (repeat !== null && repeat.length>0) && (zxz !== null && zxz.length>0)
   }
-
   calcPartOne() {
     let result = 0;
     let checkOk = true;

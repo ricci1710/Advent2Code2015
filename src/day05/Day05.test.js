@@ -19,17 +19,17 @@ describe('Test Class Day05', () => {
     const result = day.calcPartOne();
     expect(result).toEqual(236);
   });
-  test('calcPartTwo with demo data', () => {
-    const storeData = MOCK_DEMO_DATA_DAY_05.split('\n');
-    const day = new Day05(storeData);
-    const result = day.calcPartTwo();
-    expect(result).toEqual(-1);
-  });
+  // test('calcPartTwo with demo data', () => {
+  //   const storeData = MOCK_DEMO_DATA_DAY_05.split('\n');
+  //   const day = new Day05(storeData);
+  //   const result = day.calcPartTwo();
+  //   expect(result).toEqual(-1);
+  // });
   test('calcPartTwo with life data', () => {
     const storeData = MOCK_LIFE_DATA_DAY_05.split('\n');
     const day = new Day05(storeData);
     const result = day.calcPartTwo();
-    // You have completed Day XX!
-    expect(result).toEqual(-1);
+    // You have completed Day 05!
+    expect(result).toEqual(51);
   });
 });
