@@ -28,6 +28,7 @@ class Day05 {
     }
     return counter === 3;
   }
+
   /**
    * It contains at least one letter that appears twice in a row, like xx, abcdde (dd), or aabbccdd
    * (aa, bb, cc, or dd). => /(\w)\1+/gm
@@ -38,10 +39,11 @@ class Day05 {
     const regExp = new RegExp(/(\w)\1+/gm);
     return regExp.test(item);
   }
+
   /**
    * It does not contain the strings' ab, cd, pq, or xy, even if they are part of one of the other requirements.
    */
-  checkNotAllowed (item) {
+  checkNotAllowed(item) {
     if (item.indexOf('ab') >= 0)
       return false;
     if (item.indexOf('cd') >= 0)
@@ -59,15 +61,14 @@ class Day05 {
    * even aaa.
    */
   rulesPartTow(item) {
-    const repeat=item.match(/([a-z][a-z])[a-z]*\1/);
-    const zxz=item.match(/([a-z])[a-z]\1/);
-    return (repeat !== null && repeat.length>0) && (zxz !== null && zxz.length>0)
+    const repeat = item.match(/([a-z][a-z])[a-z]*\1/);
+    const zxz = item.match(/([a-z])[a-z]\1/);
+    return (repeat !== null && repeat.length > 0) && (zxz !== null && zxz.length > 0)
   }
+
   calcPartOne() {
     let result = 0;
-    let checkOk = true;
-
-    this.storeData.forEach((item)=>{
+    this.storeData.forEach((item) => {
       let checkOk = this.checkNotAllowed(item);
       checkOk = checkOk && this.checkVowels(item);
       checkOk = checkOk && this.checkTwiceLetterInRow(item);
@@ -77,14 +78,16 @@ class Day05 {
     });
     return result;
   }
+
   calcPartTwo() {
     let result = 0;
-    this.storeData.forEach((item)=>{
+    this.storeData.forEach((item) => {
       if (this.rulesPartTow(item))
         result += 1;
     });
     return result;
   }
 }
+
 export default Day05;
 
