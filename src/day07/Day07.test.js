@@ -2,10 +2,15 @@ import Day07 from "./Day07";
 import {MOCK_DEMO_DATA_DAY_07} from "./DemoData07";
 import {MOCK_LIFE_DATA_DAY_07} from "./LifeData07";
 
-describe('Test Class Day05', () => {
+describe('Test Class Day07', () => {
   test('constructor', () => {
     const day = new Day07();
     expect(day).toBeDefined();
+  });
+  test('uint32', () => {
+    expect(Day07.toUint32(-1)).toEqual(4294967295);
+    expect(Day07.str2bin('110')).toEqual(6);
+    expect(Day07.number2bin(6)).toEqual('00000000000000000000000000000110');
   });
   test('calcPartOne with demo data', () => {
     const storeData = MOCK_DEMO_DATA_DAY_07.split('\n');
