@@ -1,21 +1,27 @@
 class Array2d {
-  constructor(size, fillValue = ' ') {
-    if (typeof fillValue === 'string')
-      this.array2d = new Array(size.y + 1).fill(fillValue).map(() => new Array(size.x + 1).fill(fillValue));
-    else if (Array.isArray(fillValue)) {
+  constructor(size, fillValue) {
+    if (Array.isArray(fillValue)) {
       this.array2d = [];
       fillValue.forEach((rowLine) => {
         this.array2d.push(rowLine.split(''));
       });
     }
+    else if (typeof size === "number") // YYxYY
+      this.array2d = new Array(size).fill(fillValue).map(() => new Array(size).fill(fillValue));
+    else // YYxZZ
+      this.array2d = new Array(size.y).fill(fillValue).map(() => new Array(size.x).fill(fillValue));
   }
 
   /**
    * Get the array size back.
    * @returns {{x: number, y: number}|{x: number, y: number}}
    */
-  size() {
-    return this.array2d && this.array2d[0] ? {x: this.array2d[0].length, y: this.array2d.length} : {x: 0, y: 0};
+  get size() {
+    return this.array2d && this.array2d[0] ? { x: this.array2d[0].length, y: this.array2d.length } : { x: 0, y: 0 };
+  }
+
+  get sizeToString() {
+    return JSON.stringify(this.size);
   }
 
   /**
