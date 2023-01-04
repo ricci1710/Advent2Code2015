@@ -23,3 +23,8 @@ NOT e -> f bedeutet, dass das bitweise Komplement des Wertes von Leitung e an Le
 Weitere mögliche Gatter sind OR (bitweises ODER) und RSHIFT (Rechtsverschiebung). Wenn Sie aus irgendeinem Grund die
 Schaltung emulieren möchten, bieten fast alle Programmiersprachen (z. B. C, JavaScript oder Python) Operatoren für
 diese Gatter.
+
+**--- Teil 2 ---**
+
+Nimm nun das Signal, das du an Draht a erhalten hast, überbrücke Draht b mit diesem Signal und setze die anderen Drähte
+(einschließlich Draht a) zurück. Welches neue Signal wird schließlich an Leitung a geliefert?

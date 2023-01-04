@@ -23,3 +23,8 @@ NOT e -> f means that the bitwise complement of the value from wire e is provide
 Other possible gates include OR (bitwise OR) and RSHIFT (right-shift). If, for some reason, you'd like to emulate the
 circuit instead, almost all programming languages (for example, C, JavaScript, or Python) provide operators for these
 gates.
+
+**--- Part Two ---**
+
+Now, take the signal you got on wire a, override wire b to that signal, and reset the other wires (including wire a).
+What new signal is ultimately provided to wire a?
