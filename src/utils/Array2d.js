@@ -6,10 +6,6 @@ class Array2d {
         this.array2d.push(rowLine.split(''));
       });
     }
-    else if (typeof size === "number") // YYxYY
-      this.array2d = new Array(size).fill(fillValue).map(() => new Array(size).fill(fillValue));
-    else // YYxZZ
-      this.array2d = new Array(size.y).fill(fillValue).map(() => new Array(size.x).fill(fillValue));
   }
 
   /**
