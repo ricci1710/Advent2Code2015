@@ -25,7 +25,6 @@ class Day08 {
   }
 
   static getAsciiLength(value) {
-    var x = value.replace('\\\\', '#');
     const val = value.substring(1, value.length - 1);
     const xCodeCounter = Day08.xCodeCounter(value);
     const backslashCounter = Day08.backslashCounter(value);
@@ -33,7 +32,7 @@ class Day08 {
   }
 
   static xCodeCounter(value) {
-    const result = Day08.findRegEx(value, /(\\x[^\\])/gm);
+    const result = Day08.findRegEx(value, /(\\x[a-f\d][a-f\d])/gm);
     return result;
   }
 
