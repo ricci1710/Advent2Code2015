@@ -5,27 +5,30 @@ class Day07 {
 
   constructor(storeData) {
     this.storeData = storeData;
-    if (this.storeData) {
-      this.storeData.forEach((item) => {
-        const lineParts = item.split(' -> ');
-        const key = lineParts[1];
-        const value = lineParts[0];
+    if (this.storeData)
+      this.initMaps();
+  }
 
-        if (isNaN(value) === false)
-          this.keyValueMap.set(key, parseInt(value, 10)); // Alle Einzelwerte wegschreiben
-        else {
-          const values = value.split(' ');
-          if (values.length === 2) {
-            if (isNaN(values[1]) === false)
-              this.keyValueMap.set(key, parseInt(value, 10)); // Alle Einzelwerte wegschreiben
-            else
-              this.circuitMap.set(key, values); // Rechenalgorithmus wegschreiben
-          }
+  initMaps() {
+    this.storeData.forEach((item) => {
+      const lineParts = item.split(' -> ');
+      const key = lineParts[1];
+      const value = lineParts[0];
+
+      if (isNaN(value) === false)
+        this.keyValueMap.set(key, parseInt(value, 10)); // Alle Einzelwerte wegschreiben
+      else {
+        const values = value.split(' ');
+        if (values.length === 2) {
+          if (isNaN(values[1]) === false)
+            this.keyValueMap.set(key, parseInt(value, 10)); // Alle Einzelwerte wegschreiben
           else
-            this.circuitMap.set(key, value.split(' ')); // Rechenalgorithmus wegschreiben
+            this.circuitMap.set(key, values); // Rechenalgorithmus wegschreiben
         }
-      });
-    }
+        else
+          this.circuitMap.set(key, value.split(' ')); // Rechenalgorithmus wegschreiben
+      }
+    });
   }
 
   static AND(value1, value2) {
@@ -139,28 +142,8 @@ class Day07 {
 
   calcPartTwo() {
     const a = this.calcPartOne();
-
     this.keyValueMap.clear();
-    this.storeData.forEach((item) => {
-      const lineParts = item.split(' -> ');
-      const key = lineParts[1];
-      const value = lineParts[0];
-
-      if (isNaN(value) === false)
-        this.keyValueMap.set(key, parseInt(value, 10)); // Alle Einzelwerte wegschreiben
-      else {
-        const values = value.split(' ');
-        if (values.length === 2) {
-          if (isNaN(values[1]) === false)
-            this.keyValueMap.set(key, parseInt(value, 10)); // Alle Einzelwerte wegschreiben
-          else
-            this.circuitMap.set(key, values); // Rechenalgorithmus wegschreiben
-        }
-        else
-          this.circuitMap.set(key, value.split(' ')); // Rechenalgorithmus wegschreiben
-      }
-    });
-
+    this.initMaps();
     this.keyValueMap.set('b', a);
     return this.calcPartOne();
   }
