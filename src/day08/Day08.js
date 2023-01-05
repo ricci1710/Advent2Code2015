@@ -36,6 +36,11 @@ class Day08 {
     return result;
   }
 
+  static tickMark(value) {
+    const result = Day08.findRegEx(value, /(")/gm);
+    return result;
+  }
+
   calcPartOne() {
     let utf8Length = 0;
     let asciiLength = 0;
@@ -50,6 +55,9 @@ class Day08 {
   calcPartTwo() {
     let result = 0;
     this.storeData.forEach((item) => {
+      result += Day08.tickMark(item) + 2;
+      result += Day08.xCodeCounter(item);
+      result += Day08.backslashCounter(item);
     });
     return result;
   }
