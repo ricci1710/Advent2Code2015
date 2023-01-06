@@ -1,6 +1,8 @@
-class Day08 {
-  constructor(storeData) {
-    this.storeData = storeData;
+import Day from "../base/Day";
+
+class Day08 extends Day {
+  constructor(dayNumber, loadDemoData) {
+    super(dayNumber, loadDemoData);
   }
 
   static findRegEx(value, regex) {
@@ -32,8 +34,7 @@ class Day08 {
   }
 
   static xCodeCounter(value) {
-    const result = Day08.findRegEx(value, /(\\x[a-f\d][a-f\d])/gm);
-    return result;
+    return Day08.findRegEx(value, /(\\x[a-f\d][a-f\d])/gm);
   }
 
   static tickMark(value) {
