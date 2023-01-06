@@ -37,8 +37,7 @@ class Day08 {
   }
 
   static tickMark(value) {
-    const result = Day08.findRegEx(value, /(")/gm);
-    return result;
+    return Day08.findRegEx(value, /(")/gm);
   }
 
   calcPartOne() {
@@ -54,10 +53,11 @@ class Day08 {
 
   calcPartTwo() {
     let result = 0;
-    this.storeData.forEach((item) => {
-      result += Day08.tickMark(item) + 2;
-      result += Day08.xCodeCounter(item);
-      result += Day08.backslashCounter(item);
+    this.storeData.forEach((line) => {
+      result += Day08.xCodeCounter(line);
+      const replItem = line.replace(/(\\x[a-f\d][a-f\d])/gm, '#');
+      result += Day08.tickMark(replItem) + 2;
+      result += Day08.findRegEx(replItem, /(\\)/gm);
     });
     return result;
   }
