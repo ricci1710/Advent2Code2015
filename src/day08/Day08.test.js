@@ -93,7 +93,7 @@ describe('Test Class Day08', () => {
     const storeData = fs.readFileSync('./src/day08/LifeData08.bin', 'ascii').split('\n');
     const day = new Day08(storeData);
     const result = day.calcPartTwo();
-    // You have completed Day XX!
-    expect(result).toEqual(-1);
+    // You have completed Day 08!
+    expect(result).toEqual(2085);
   });
 });
