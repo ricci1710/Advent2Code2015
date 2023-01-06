@@ -26,3 +26,18 @@ Die kürzeste Strecke ist London -> Dublin -> Belfast = 605, also lautet die Ant
 ```
 
 Wie groß ist die Entfernung der kürzesten Strecke?
+
+**--- Zweiter Teil ---**
+
+Im nächsten Jahr beschließt der Weihnachtsmann, nur um anzugeben, die Route mit der längsten Entfernung zu nehmen.
+
+Er kann immer noch an zwei beliebigen (unterschiedlichen) Orten beginnen und enden, und er muss jeden Ort genau einmal
+besuchen.
+
+```
+Bei den oben genannten Entfernungen wäre die längste Strecke 982 über (z. B.) Dublin -> London -> Belfast.
+```
+
+Wie groß ist die Entfernung der längsten Strecke?
+
+Übersetzt mit www.DeepL.com/Translator (kostenlose Version)

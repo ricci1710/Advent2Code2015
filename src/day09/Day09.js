@@ -1,9 +1,10 @@
 import Day from "../base/Day";
-import Array2d from "../utils/Array2d";
 
 class Day09 extends Day {
   cityDirections = new Map();
   possibleRoutes;
+  shortestDistance;
+  longestDistance;
 
   constructor(dayNumber, loadDemoData) {
     super(dayNumber, loadDemoData);
@@ -28,7 +29,11 @@ class Day09 extends Day {
     return result;
   }
 
-  factorial(value) {
+  getDistance(from, to) {
+
+  }
+
+  static factorial(value) {
     let result = 1;
     for (let i = 1; i <= value; i += 1)
       result = result * i;
@@ -53,79 +58,6 @@ class Day09 extends Day {
     });
   }
 
-  getCombinations(valuesArray) {
-    var combi = [];
-    var temp = [];
-    var slent = Math.pow(2, valuesArray.length);
-
-    for (var i = 0; i < slent; i++) {
-      temp = [];
-      for (var j = 0; j < valuesArray.length; j++) {
-        if ((i & Math.pow(2, j))) {
-          temp.push(valuesArray[j]);
-        }
-      }
-      if (temp.length > 0) {
-        combi.push(temp);
-      }
-    }
-
-    combi.sort((a, b) => a.length - b.length);
-    console.log(combi.join("\n"));
-    return combi;
-  }
-
-  getXXX() {
-    const result = [];
-    result.length = 6; //n=2
-
-    function combine(input, len, start) {
-      if (len === 0) {
-        console.log(result.join(" ")); //process here the result
-        return;
-      }
-      for (let i = start; i <= input.length - len; i++) {
-        result[result.length - len] = input[i];
-        combine(input, len - 1, i + 1);
-      }
-    }
-
-    const array = ["London", "Belfast", "Dublin"];
-    combine(array, result.length, 0);
-  }
-
-  createPossibleRoutes() {
-    this.getXXX();
-
-    const possibleRoutes = new Map();
-    for (const [key, value] of this.cityDirections) {
-      const factorial = this.factorial(value.size);
-      const array2d = new Array2d({x: value.size, y: factorial}, '');
-
-      const cityKey = value.keys();
-      let row = 0;
-      let rot = [...cityKey];
-      const x = this.getCombinations(rot);
-      console.log(x);
-      // var array = ["apple", "banana", "lemon", "mango"];
-
-      var result = rot.flatMap(
-        (v, i) => rot.slice(i + 1).map(w => v + ' ' + w)
-      );
-
-      console.log(result);
-
-
-      const expectVal = rot[0];
-      do {
-        array2d.fillRowLine(row, [...rot]);
-        row += 1;
-        rot = this.arrayRotate(rot);
-      } while (expectVal !== rot[0]);
-      console.log(array2d);
-    }
-  }
-
   insertCity(key, value) {
     const {city, distance} = value;
     let cities = this.cityDirections.get(key);
@@ -138,31 +70,38 @@ class Day09 extends Day {
     }
   }
 
-  calcShortestDistance() {
+  calcDistances() {
     const yLength = this.possibleRoutes.length;
     const xLength = this.possibleRoutes[0].length;
 
-    let result = 0;
+    this.longestDistance = 0;
+    this.shortestDistance = 100000000;
     for (let idy = 0; idy < yLength; idy += 1) {
-      for (let idx = 0; idx < xLength; idx += 1) {
-        console.log(this.possibleRoutes[idy][idx]);
+      let distance = 0;
+      for (let idx = 0; idx < xLength - 1; idx += 1) {
+        const cityFrom = this.possibleRoutes[idy][idx];
+        const cityTo = this.possibleRoutes[idy][idx + 1];
+
+        const distanceMqp = this.cityDirections.get(cityFrom);
+        distance += parseInt(distanceMqp.get(cityTo), 10);
       }
+
+      this.shortestDistance = Math.min(this.shortestDistance, distance);
+      this.longestDistance = Math.max(this.longestDistance, distance);
     }
-    return result;
   }
 
   calcPartOne() {
     this.createCityDirections();
     const cities = [...this.cityDirections.keys()];
     this.possibleRoutes = Day09.permutation(cities);
-    return this.calcShortestDistance();
+    this.calcDistances();
+    return this.shortestDistance;
   }
 
   calcPartTwo() {
-    let result = 0;
-    this.storeData.forEach((item) => {
-    });
-    return result;
+    this.calcPartOne();
+    return this.longestDistance;
   }
 }
 
