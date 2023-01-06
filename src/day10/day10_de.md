@@ -1,8 +1,8 @@
 **--- Tag 10: Elfen schauen, Elfen sagen ---**
 
 Heute spielen die Elfen ein Spiel, das sie Look-and-Say nennen. Sie bilden abwechselnd Sequenzen, indem sie die
-vorherige Sequenz laut vorlesen und diese als nächste Sequenz verwenden. Zum Beispiel wird 211 als "eins zwei, zwei
-Einsen" gelesen, was zu 1221 (1 2, 2 1s) wird.
+vorherige Sequenz laut vorlesen und diese als nächste Sequenz verwenden. Zum Beispiel wird 211 als **_"eine zwei, zwei
+Einsen"_** gelesen, was zu 1221 (1 2, 2 1s) wird.
 
 Look-and-Say-Sequenzen werden iterativ erzeugt, wobei der vorherige Wert als Eingabe für den nächsten Schritt verwendet
 wird. Für jeden Schritt nehmen Sie den vorherigen Wert und ersetzen jede Ziffernfolge (wie 111) durch die Anzahl der
