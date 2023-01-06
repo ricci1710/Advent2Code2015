@@ -8,30 +8,14 @@ describe('Test Class Day09', () => {
     expect(demoDay).toBeDefined();
     expect(lifeDay).toBeDefined();
   });
+  test('permutation', () => {
+    const result = Day09.permutation(['London', 'Dublin', 'Belfast']);
+    expect(result.length).toEqual(6);
+  });
   test('calcPartOne with demo data', () => {
-    const permutator = (inputArr) => {
-      let result = [];
-
-      const permute = (arr, m = []) => {
-        if (arr.length === 0) {
-          result.push(m)
-        } else {
-          for (let i = 0; i < arr.length; i++) {
-            let curr = arr.slice();
-            let next = curr.splice(i, 1);
-            permute(curr.slice(), m.concat(next))
-          }
-        }
-      }
-
-      permute(inputArr)
-
-      return result;
-    }
-    const x = permutator(['London', 'Dublin', 'Belfast']);
-    console.info(x);
     const result = demoDay.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(demoDay.possibleRoutes.length).toEqual(6);
+    expect(result).toEqual(605);
   });
   test('calcPartOne with life data', () => {
     const result = lifeDay.calcPartOne();
