@@ -1,8 +1,8 @@
 import Day10 from "./Day10";
 
 describe('Test Class Day10', () => {
-  const demoDay = new Day10(10, true);
-  const lifeDay = new Day10(10, false);
+  const demoDay = new Day10(10, true, 4);
+  const lifeDay = new Day10(10, false, 40);
 
   test('constructor', () => {
     expect(demoDay).toBeDefined();
@@ -10,7 +10,7 @@ describe('Test Class Day10', () => {
   });
   test('calcPartOne with demo data', () => {
     const result = demoDay.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(result).toEqual('312211');
   });
   test('calcPartOne with life data', () => {
     const result = lifeDay.calcPartOne();

@@ -1,8 +1,11 @@
 import Day from "../base/Day";
 
 class Day10 extends Day {
-  constructor(dayNumber, loadDemoData) {
+  repeatCounter = 0;
+
+  constructor(dayNumber, loadDemoData, repeatCounter) {
     super(dayNumber, loadDemoData);
+    this.repeatCounter = repeatCounter;
   }
 
   calcPartOne() {
