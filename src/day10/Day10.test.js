@@ -1,8 +1,8 @@
 import Day10 from "./Day10";
 
 describe('Test Class Day10', () => {
-  const demoDay = new Day10(10, true, 4);
-  const lifeDay = new Day10(10, false, 40);
+  const demoDay = new Day10(10, true, 5);
+  let lifeDay = new Day10(10, false, 40);
 
   test('constructor', () => {
     expect(demoDay).toBeDefined();
@@ -14,15 +14,12 @@ describe('Test Class Day10', () => {
   });
   test('calcPartOne with life data', () => {
     const result = lifeDay.calcPartOne();
-    expect(result).toEqual(-1);
-  });
-  test('calcPartTwo with demo data', () => {
-    const result = demoDay.calcPartTwo();
-    expect(result).toEqual(-1);
+    expect(result.length).toEqual(360154);
   });
   test('calcPartTwo with life data', () => {
+    let lifeDay = new Day10(10, false, 50);
     const result = lifeDay.calcPartTwo();
     // You have completed Day XX!
-    expect(result).toEqual(-1);
+    expect(result.length).toEqual(5103798);
   });
 });

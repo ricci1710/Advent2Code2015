@@ -17,10 +17,18 @@ class Day {
     }
   }
 
+  /**
+   * Berechnung der ersten Teilaufgabe
+   * @returns {*}
+   */
   calcPartOne() {
     return -1;
   }
 
+  /**
+   * Berechnung der zweiten Teilaufgabe
+   * @returns {*}
+   */
   calcPartTwo() {
     return -1;
   }
