@@ -8,21 +8,28 @@ describe('Test Class Day11', () => {
     expect(demoDay).toBeDefined();
     expect(lifeDay).toBeDefined();
   });
-  test('calcPartOne with demo data', () => {
+  test('calcPartOne with demo data: abcdefgh', () => {
+    demoDay.storeData = 'abcdefgh';
     const result = demoDay.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(result).toEqual('abcdffaa');
+  });
+  test('calcPartOne with demo data: ghijklmn', () => {
+    demoDay.storeData = 'ghijklmn';
+    const result = demoDay.calcPartOne();
+    expect(result).toEqual('ghjaabcc');
   });
   test('calcPartOne with life data', () => {
+    lifeDay.storeData = 'hxbxwxba';
     const result = lifeDay.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(result).toEqual('a');
   });
-  test('calcPartTwo with demo data', () => {
-    const result = demoDay.calcPartTwo();
-    expect(result).toEqual(-1);
-  });
-  test('calcPartTwo with life data', () => {
-    const result = lifeDay.calcPartTwo();
-    // You have completed Day XX!
-    expect(result).toEqual(-1);
-  });
+  // test('calcPartTwo with demo data', () => {
+  //   const result = demoDay.calcPartTwo();
+  //   expect(result).toEqual(-1);
+  // });
+  // test('calcPartTwo with life data', () => {
+  //   const result = lifeDay.calcPartTwo();
+  //   // You have completed Day XX!
+  //   expect(result).toEqual(-1);
+  // });
 });

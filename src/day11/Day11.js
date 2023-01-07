@@ -7,15 +7,11 @@ class Day11 extends Day {
 
   calcPartOne() {
     let result = 0;
-    this.storeData.forEach((item) => {
-    });
     return result;
   }
 
   calcPartTwo() {
     let result = 0;
-    this.storeData.forEach((item) => {
-    });
     return result;
   }
 }
