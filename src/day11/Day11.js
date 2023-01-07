@@ -87,7 +87,6 @@ class Day11 extends Day {
         nextValue = nextValue.replaceAt(position, String.fromCharCode(charCode));
       return nextValue;
     }
-
     return next(value, value.length - 1);
   }
 
