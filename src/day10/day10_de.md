@@ -20,3 +20,11 @@ Aus 1 wird 11 (1 Kopie der Ziffer 1).
 
 Beginnen Sie mit den Ziffern in Ihrer Rätseleingabe und wenden Sie diesen Vorgang 40 Mal an.
 Wie lang ist das Ergebnis?
+
+**--- Teil 2 ---**
+
+Toll, nicht wahr? Vielleicht gefällt es Ihnen auch, wenn John Conway über diese Sequenz spricht (das ist der berühmte
+Conway von Conway's Game of Life).
+
+Beginnen Sie nun wieder mit den Ziffern in Ihrer Rätseleingabe und führen Sie diesen Vorgang 50 Mal durch. Wie lang ist
+das neue Ergebnis?

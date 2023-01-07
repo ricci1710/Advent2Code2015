@@ -34,3 +34,7 @@ die mit ghi... beginnen, da i nicht erlaubt ist.
 ```
 
 Wie lautet das nächste Passwort für den Weihnachtsmann angesichts seines aktuellen Passworts (Ihre Rätseleingabe)?
+
+**--- Teil 2 ---**
+
+Das Passwort des Weihnachtsmanns ist wieder abgelaufen. Wie lautet das nächste?
