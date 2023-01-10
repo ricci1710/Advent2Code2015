@@ -1,4 +1,4 @@
-import Day from "../base/Day";
+import Day from '../base/Day';
 
 class DayXX extends Day {
   constructor(dayNumber, loadDemoData) {
