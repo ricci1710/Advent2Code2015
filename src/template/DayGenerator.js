@@ -6,7 +6,7 @@ class DayGenerator {
   templateFileNames = [];
 
   constructor(dayNumber) {
-    this.dayNumber = dayNumber;
+    this.dayNumber = dayNumber.length === 1 ? '0' + dayNumber : dayNumber;
 
     this.templateFileNames.push('DayXX.js');
     this.templateFileNames.push('DayXX.test.js');
@@ -16,34 +16,55 @@ class DayGenerator {
     this.templateFileNames.push('LifeDataXX.bin');
   }
 
+  async createDirectory(destinationPath) {
+    if (fs.existsSync(destinationPath))
+      return;
+    await mkdir(destinationPath, { recursive: false });
+  }
+
+  getDestFileName(fileName) {
+    return fileName.replace('XX', this.dayNumber);
+  }
+
+  async copyFile(fileName, srcPath, destPath) {
+    const destFileName = this.getDestFileName(fileName);
+    const srcNameAndPath = srcPath + fileName;
+    const destNameAndPath = destPath + destFileName;
+
+    if (fs.existsSync(destNameAndPath))
+      return;
+
+    await copyFile(srcNameAndPath, destNameAndPath);
+  }
+
+  get nameAndPaths() {
+    const srcPath = './src/template/';
+    const destPath = `./src/day${this.dayNumber}/`;
+
+    return { srcPath, destPath };
+  }
+
+  async removeXX(fileName, destPath) {
+    const destFileName = this.getDestFileName(fileName);
+    let contents = await readFile(destPath + destFileName, { encoding: 'utf8' });
+    contents = contents.replaceAll('XX', this.dayNumber.toString());
+    const data = new Uint8Array(Buffer.from(contents));
+    await writeFile(destPath + destFileName, data);
+  }
+
   async generate() {
     let success = true;
-    const sourcePath = './src/template/DayXX.js';
-
-    let destinationPath;
-    let fileName;
-
-    if (this.dayNumber < 10) {
-      fileName = `Day0${this.dayNumber}.js`;
-      destinationPath = `./src/day0${this.dayNumber}/`;
-    }
-    else {
-      fileName = `Day${this.dayNumber}.js`;
-      destinationPath = `./src/day${this.dayNumber}/`;
-    }
+    const { srcPath, destPath } = this.nameAndPaths;
 
     try {
-      if (!fs.existsSync(destinationPath))
-        await mkdir(destinationPath, { recursive: false });
+      await this.createDirectory(destPath);
 
-      if (!fs.existsSync(destinationPath + fileName))
-        await copyFile(sourcePath, destinationPath + fileName);
+      this.templateFileNames.forEach(fileName => {
+        this.copyFile(fileName, srcPath, destPath);
+      });
 
-      let contents = await readFile(destinationPath + fileName, { encoding: 'utf8' });
-      contents = contents.replaceAll('XX', this.dayNumber.toString());
-      const data = new Uint8Array(Buffer.from(contents));
-      await writeFile(destinationPath + fileName, data);
-      console.log(contents);
+      await this.removeXX(this.templateFileNames[0], destPath);
+      await this.removeXX(this.templateFileNames[1], destPath);
     }
     catch (err) {
       console.error(err);
