@@ -19,7 +19,7 @@ class DayGenerator {
   async createDirectory(destinationPath) {
     if (fs.existsSync(destinationPath))
       return;
-    await mkdir(destinationPath, { recursive: false });
+    await mkdir(destinationPath, {recursive: false});
   }
 
   getDestFileName(fileName) {
@@ -41,20 +41,20 @@ class DayGenerator {
     const srcPath = './src/template/';
     const destPath = `./src/day${this.dayNumber}/`;
 
-    return { srcPath, destPath };
+    return {srcPath, destPath};
   }
 
   async removeXX(fileName, destPath) {
     const destFileName = this.getDestFileName(fileName);
-    let contents = await readFile(destPath + destFileName, { encoding: 'utf8' });
-    contents = contents.replaceAll('XX', this.dayNumber.toString());
+    let contents = await readFile(destPath + destFileName, {encoding: 'utf8'});
+    contents = contents.replaceAll('XX', this.dayNumber);
     const data = new Uint8Array(Buffer.from(contents));
     await writeFile(destPath + destFileName, data);
   }
 
   async generate() {
     let success = false;
-    const { srcPath, destPath } = this.nameAndPaths;
+    const {srcPath, destPath} = this.nameAndPaths;
 
     try {
       await this.createDirectory(destPath);
@@ -66,8 +66,7 @@ class DayGenerator {
       await this.removeXX(this.templateFileNames[0], destPath);
       await this.removeXX(this.templateFileNames[1], destPath);
       success = true;
-    }
-    catch (err) {
+    } catch (err) {
       console.error(err);
     }
 
