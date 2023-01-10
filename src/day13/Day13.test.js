@@ -10,7 +10,7 @@ describe('Test Class Day13', () => {
   });
   test('calcPartOne with demo data day13', () => {
     const result = demoDay.calcPartOne();
-    expect(result).toEqual(-1);
+    expect(result).toEqual(330);
   });
   test('calcPartOne with life data day13', () => {
     const result = lifeDay.calcPartOne();
