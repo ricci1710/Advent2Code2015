@@ -14,8 +14,7 @@ class Day12 extends Day {
       // This is necessary to avoid infinite loops with zero-width matches
       if (m.index === regex.lastIndex) {
         regex.lastIndex++;
-      }
-      else {
+      } else {
         sum += parseInt(m[0], 10);
       }
     }
@@ -96,21 +95,35 @@ class Day12 extends Day {
         else if (value === 'red')
           removeIndices.push(idx);
         else if (typeof value === 'object')
-          array[idx] = recursiveObject(value);
+          if (recursiveObject(value)) {
+            removeIndices.push(idx);
+          }
       }
-      removeIndices.forEach(delIdx => array.splice(delIdx, 1));
+      removeIndices.reduceRight((_, elem) => array.splice(elem, 1), null);
     };
 
     const recursiveObject = (objValue) => {
-      for (const value of Object.values(objValue)) {
-        if (value === 'red')
-          objValue = {}
-        else if (Array.isArray(value))
-          objValue = recursiveArray(value);
+      for (const [key, value] of Object.entries(objValue)) {
+        if (value === 'red') {
+          return true;
+        } else if (Array.isArray(value))
+          recursiveArray(value);
         else if (typeof value === 'object')
-          recursiveObject(value);
+          if (recursiveObject(value)) {
+            delete objValue[key];
+          }
       }
-      return objValue;
+      return false;
+      // for (const value of Object.values(objValue)) {
+      //   if (value === 'red') {
+      //     objValue = {};
+      //     break;
+      //   } else if (Array.isArray(value))
+      //     recursiveArray(value);
+      //   else if (typeof value === 'object')
+      //     objValue = recursiveObject(value);
+      // }
+      // return objValue;
     };
 
     const test = (value) => {

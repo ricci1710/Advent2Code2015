@@ -16,33 +16,33 @@ describe('Test Class Day12', () => {
     const result = lifeDay.calcPartOne();
     expect(result).toEqual(191164);
   });
-  test.skip('calcPartTwo with demo data 1', () => {
+  test('calcPartTwo with demo data 1', () => {
     demoDay.storeData = '[[1,"red",1], "red"]';
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(2);
     expect(demoDay.storeData).toEqual('[[1,1]]');
   });
-  test.skip('calcPartTwo with demo data 2', () => {
+  test('calcPartTwo with demo data 2', () => {
     demoDay.storeData = '[[1,"red",1, {"a":"red","f":50}], "red"]';
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(2);
-    expect(demoDay.storeData).toEqual('[[1,1,{}]]');
+    expect(demoDay.storeData).toEqual('[[1,1]]');
   });
   test('calcPartTwo with demo data 3', () => {
     demoDay.storeData = '[[1,{"a":1,"b":"violet","c":{"d": "violett","e": {"f":"red","g":50}, "h":1},"g":2}]]';
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(5);
-    expect(demoDay.storeData).toEqual('[[1,{"a":1,"b":"violet","c":{"d": "violett","e": {}, "h":1},"g":2}]]');
+    expect(demoDay.storeData).toEqual('[[1,{"a":1,"b":"violet","c":{"d":"violett","h":1},"g":2}]]');
   });
-  test.skip('calcPartTwo with demo data 4', () => {
+  test('calcPartTwo with demo data 4', () => {
     demoDay.storeData = '[[1,{"a":1,"b":"violet","c":{"d":["violett",{"e":"red","f":50},1]},"g":2}]]';
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(5);
-    expect(demoDay.storeData).toEqual('[[1,{"a":1,"b":"violet","c":{"d":["violett",{},1]},"g":2}]]');
+    expect(demoDay.storeData).toEqual('[[1,{"a":1,"b":"violet","c":{"d":["violett",1]},"g":2}]]');
   });
-  test.skip('calcPartTwo with life data final', () => {
+  test('calcPartTwo with life data final', () => {
     const result = lifeDay.calcPartTwo();
-    // You have completed Day XX! 105116 to high, 14142 to low
-    expect(result).toEqual(105110);
+    // You have completed Day12!
+    expect(result).toEqual(87842);
   });
 });
