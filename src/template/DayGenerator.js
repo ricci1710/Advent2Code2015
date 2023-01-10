@@ -53,7 +53,7 @@ class DayGenerator {
   }
 
   async generate() {
-    let success = true;
+    let success = false;
     const { srcPath, destPath } = this.nameAndPaths;
 
     try {
@@ -65,10 +65,10 @@ class DayGenerator {
 
       await this.removeXX(this.templateFileNames[0], destPath);
       await this.removeXX(this.templateFileNames[1], destPath);
+      success = true;
     }
     catch (err) {
       console.error(err);
-      success = false;
     }
 
     return success;
