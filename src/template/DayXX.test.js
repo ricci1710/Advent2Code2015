@@ -1,8 +1,8 @@
 import DayXX from './DayXX';
 
 describe('Test Class DayXX', () => {
-  const demoDay = new DayXX(-1, true);
-  const lifeDay = new DayXX(-1, false);
+  const demoDay = new DayXX('XX', true);
+  const lifeDay = new DayXX('XX', false);
 
   test('constructor', () => {
     expect(demoDay).toBeDefined();
