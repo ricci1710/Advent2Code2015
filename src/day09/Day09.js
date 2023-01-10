@@ -29,10 +29,6 @@ class Day09 extends Day {
     return result;
   }
 
-  getDistance(from, to) {
-
-  }
-
   static factorial(value) {
     let result = 1;
     for (let i = 1; i <= value; i += 1)
