@@ -14,7 +14,8 @@ class Day13 extends Day {
     const permute = (arr, m = []) => {
       if (arr.length === 0) {
         result.push(m)
-      } else {
+      }
+      else {
         for (let i = 0; i < arr.length; i += 1) {
           let curr = arr.slice();
           let next = curr.splice(i, 1);
@@ -43,7 +44,7 @@ class Day13 extends Day {
       temp = "";
       for (let j = 0; j < value.length; j += 1) {
         if ((i & Math.pow(2, j))) {
-          temp += ',' + value[j]
+          temp += value[j]
         }
       }
       if (temp !== "") {
@@ -58,7 +59,7 @@ class Day13 extends Day {
     this.storeData.forEach((line) => {
       const lineParts = line.split(' ');
       const firstName = lineParts[0];
-      const secondName = lineParts[lineParts.length - 1];
+      const secondName = lineParts[lineParts.length - 1].replace('.', '');
       const happiness = lineParts[2] === 'gain' ? parseInt(lineParts[3], 10) : (-1 * parseInt(lineParts[3], 10));
 
       let happinessMap = this.personToHappiness.get(firstName);
@@ -69,32 +70,34 @@ class Day13 extends Day {
     });
   }
 
-  getSeatingArrangement() {
-    const persons = Array.from(this.personToHappiness.keys());
-    const permutation = Day13.permutation(persons);
-    return permutation.map((item) => {
-      item.splice(-1);
-      return item;
-    });
-  }
-
   calcPartOne() {
-    let result = 0;
-
     const persons = Array.from(this.personToHappiness.keys());
     const seatingArrangement = Day13.permutation(persons);
-
+    let maxHappiness = 0;
     seatingArrangement.forEach((sittingPlan) => {
-      console.log(sittingPlan);
+      let happiness = 0;
+      for (let idx = 0; idx < sittingPlan.length; idx += 1) {
+        const centerPerson = sittingPlan[idx];
+        const leftPerson = idx === 0 ? sittingPlan[sittingPlan.length - 1] : sittingPlan[idx - 1];
+        const rightPerson = idx === sittingPlan.length - 1 ? sittingPlan[0] : sittingPlan[idx + 1];
+        const happinessMap = this.personToHappiness.get(centerPerson);
+        happiness += happinessMap.get(leftPerson) + happinessMap.get(rightPerson);
+      }
+      maxHappiness = Math.max(happiness, maxHappiness);
     });
-    return result;
+    return maxHappiness;
   }
 
   calcPartTwo() {
-    let result = 0;
-    this.storeData.forEach((item) => {
-    });
-    return result;
+    for (const happinessMap of this.personToHappiness.values())
+      happinessMap.set('Owner', 0);
+
+    const ownerHappiness = new Map();
+    const persons = Array.from(this.personToHappiness.keys());
+    persons.forEach((person) => ownerHappiness.set(person, 0));
+    this.personToHappiness.set('Owner', ownerHappiness);
+
+    return this.calcPartOne();
   }
 }
 

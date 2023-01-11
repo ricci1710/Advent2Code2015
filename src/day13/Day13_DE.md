@@ -42,3 +42,14 @@ Sitzordnung mit einer Gesamtveränderung des Glücks von 330 die optimalste ist.
 ```
 
 Wie hoch ist die Gesamtveränderung der Zufriedenheit bei der optimalen Sitzordnung der tatsächlichen Gästeliste?
+
+**--- Zweiter Teil ---**
+
+In der ganzen Aufregung bemerkst du, dass du vergessen hast, dich zu setzen. Zu diesem Zeitpunkt stehst du der ganzen
+Sache ziemlich apathisch gegenüber, und dein Glücksgefühl würde nicht wirklich steigen oder sinken, unabhängig davon,
+neben wem du sitzt. Sie gehen davon aus, dass alle anderen genauso ambivalent wären, wenn sie neben Ihnen sitzen würden.
+
+Fügen Sie sich also selbst zu der Liste hinzu und geben Sie allen Glücksbeziehungen, an denen Sie beteiligt sind, den
+Wert 0.
+
+Wie hoch ist die Gesamtveränderung des Glücks bei einer optimalen Sitzordnung, die Sie selbst einschließt?
