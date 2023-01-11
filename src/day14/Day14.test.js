@@ -8,21 +8,21 @@ describe('Test Class Day14', () => {
     expect(demoDay).toBeDefined();
     expect(lifeDay).toBeDefined();
   });
-  test('calcPartOne with demo data day14', () => {
+  test.skip('calcPartOne with demo data day14', () => {
     const result = demoDay.calcPartOne(1000);
     expect(result).toEqual(1120);
   });
   test.skip('calcPartOne with life data day14', () => {
     const result = lifeDay.calcPartOne(2503);
-    expect(result).toEqual(-1);
+    expect(result).toEqual(2655);
   });
   test.skip('calcPartTwo with demo data day14', () => {
-    const result = demoDay.calcPartTwo();
-    expect(result).toEqual(-1);
+    const result = demoDay.calcPartTwo(1000);
+    expect(result).toEqual(689);
   });
-  test.skip('calcPartTwo with life data day14', () => {
-    const result = lifeDay.calcPartTwo();
+  test('calcPartTwo with life data day14', () => {
+    const result = lifeDay.calcPartTwo(2503);
     // You have completed Day 14!
-    expect(result).toEqual(-1);
+    expect(result).toEqual(1059);
   });
 });

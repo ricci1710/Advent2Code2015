@@ -26,3 +26,22 @@ hat zu diesem Zeitpunkt nur 1056 km zurückgelegt). In dieser Situation würde C
 Welche Strecke hat das siegreiche Rentier nach genau 2503 Sekunden zurückgelegt, wenn man die Beschreibungen der
 einzelnen Rentiere (in Ihrer Rätseleingabe) zugrunde legt?
 
+**--- Zweiter Teil ---**
+
+Als der Weihnachtsmann sieht, wie sich die Rentiere in Stößen bewegen, beschließt er, dass er mit dem alten Punktesystem
+nicht zufrieden ist.
+
+Stattdessen vergibt er am Ende jeder Sekunde einen Punkt an das Rentier, das gerade in Führung liegt. (Wenn mehrere
+Rentiere gleichauf an der Spitze liegen, erhalten sie jeweils einen Punkt). Er behält natürlich das traditionelle
+Zeitlimit von 2503 Sekunden bei, denn alles andere wäre völlig lächerlich.
+
+Bei dem Beispielrentier von oben liegt Dancer nach der ersten Sekunde in Führung und erhält einen Punkt. Er bleibt bis
+einige Sekunden nach Comets zweitem Durchgang in Führung:
+nach der 140. Sekunde übernimmt Comet die Führung und erhält seinen ersten Punkt. Da Dancer zuvor 139 Sekunden lang in
+Führung lag, hat er bis zur 140. Sekunde natürlich 139 Punkte gesammelt.
+
+Nach der 1000. Sekunde hat Dancer 689 Punkte angesammelt, während der arme Comet, unser alter Champion, nur 312 Punkte
+hat. Nach dem neuen Punktesystem würde Dancer also gewinnen (wenn das Rennen nach 1000 Sekunden zu Ende wäre).
+
+Noch einmal: Wie viele Punkte hat das siegreiche Rentier nach genau 2503 Sekunden, wenn man die Beschreibungen der
+einzelnen Rentiere (in Ihrer Rätseleingabe) zugrunde legt?
