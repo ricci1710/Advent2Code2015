@@ -21,7 +21,9 @@ Nehmen wir zum Beispiel an, Sie haben diese beiden Zutaten:
 
 Karamell: Fassungsvermögen -1, Haltbarkeit -2, Geschmack  6, Konsistenz  3, Kalorien 8
 Zimt:     Fassungsvermögen  2, Haltbarkeit  3, Geschmack -2, Konsistenz -1, Kalorien 3
+```
 
+```
 Würde man 44 Teelöffel Karamell und 56 Teelöffel Zimt verwenden (da sich die Mengen der einzelnen Zutaten zu 100
 addieren müssen), ergäbe sich ein Keks mit den folgenden Eigenschaften:
 

@@ -18,8 +18,10 @@ totals become 0) and then multiplying together everything except calories.
 
 For instance, suppose you have these two ingredients:
 
-Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8
-Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3
+```
+Butterscotch: capacity -1, durability -2, flavor  6, texture  3, calories 8
+Cinnamon:     capacity  2, durability  3, flavor -2, texture -1, calories 3
+```
 
 ```
 Then, choosing to use 44 teaspoons of butterscotch and 56 teaspoons of cinnamon (because the amounts of each ingredient
