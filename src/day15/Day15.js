@@ -47,8 +47,10 @@ class Day15 extends Day {
     return combinations;
   }
 
-  rotate(teaspoons) {
-    return teaspoons;
+  static arrayRotate(arr, reverse) {
+    if (reverse) arr.unshift(arr.pop());
+    else arr.push(arr.shift());
+    return arr;
   }
 
   bakeCookie(teaspoons, names) {
@@ -85,16 +87,16 @@ class Day15 extends Day {
         let teaspoons = [start];
         if (names.length > 1) {
           for (let idx = 1; idx < names.length; idx += 1) {
-            if (idx = 1)
-              rotateTeaspoons.push(100 - start);
+            if (idx === 1)
+              rotateTeaspoons.push(100 - start - names.length + 2);
             else
               rotateTeaspoons.push(1);
           }
 
           for (let rotateIdx = 0; rotateIdx < names.length - 1; rotateIdx += 1) {
-            teaspoons = teaspoons.concat(rotateTeaspoons);
-            totalScore = Math.max(totalScore, this.bakeCookie(teaspoons, names));
-            rotateTeaspoons = this.rotate(rotateTeaspoons);
+            const allTeaspoons = teaspoons.concat(rotateTeaspoons);
+            totalScore = Math.max(totalScore, this.bakeCookie(allTeaspoons, names));
+            rotateTeaspoons = Day15.arrayRotate(rotateTeaspoons);
           }
         }
         else {

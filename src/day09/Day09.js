@@ -16,7 +16,8 @@ class Day09 extends Day {
     const permute = (arr, m = []) => {
       if (arr.length === 0) {
         result.push(m)
-      } else {
+      }
+      else {
         for (let i = 0; i < arr.length; i++) {
           let curr = arr.slice();
           let next = curr.splice(i, 1);
@@ -36,12 +37,6 @@ class Day09 extends Day {
     return result;
   }
 
-  arrayRotate(arr, reverse) {
-    if (reverse) arr.unshift(arr.pop());
-    else arr.push(arr.shift());
-    return arr;
-  }
-
   createCityDirections() {
     this.storeData.forEach((item) => {
       const lineInfo = item.split(' ');
@@ -49,13 +44,13 @@ class Day09 extends Day {
       const city2 = lineInfo[2];
       const distance = lineInfo[4];
 
-      this.insertCity(city1, {city: city2, distance});
-      this.insertCity(city2, {city: city1, distance});
+      this.insertCity(city1, { city: city2, distance });
+      this.insertCity(city2, { city: city1, distance });
     });
   }
 
   insertCity(key, value) {
-    const {city, distance} = value;
+    const { city, distance } = value;
     let cities = this.cityDirections.get(key);
     if (cities)
       cities.set(city, distance);

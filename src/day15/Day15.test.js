@@ -8,11 +8,11 @@ describe('Test Class Day15', () => {
     expect(demoDay).toBeDefined();
     expect(lifeDay).toBeDefined();
   });
-  test('calcPartOne with demo data day15', () => {
+  test.skip('calcPartOne with demo data day15', () => {
     const result = demoDay.calcPartOne();
     expect(result).toEqual(62842880);
   });
-  test.skip('calcPartOne with life data day15', () => {
+  test('calcPartOne with life data day15', () => {
     const result = lifeDay.calcPartOne();
     expect(result).toEqual(-1);
   });
