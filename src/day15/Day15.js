@@ -16,11 +16,12 @@ class Day15 extends Day {
       const ingredients = line.split(' ');
       const name = ingredients[0].replace(':', '');
       if (name.length) {
-        const capacity = parseInt(ingredients[2]);
-        const durability = parseInt(ingredients[4]);
-        const flavor = parseInt(ingredients[6]);
-        const texture = parseInt(ingredients[8]);
-        this.ingredientInfos.set(name, { capacity, durability, flavor, texture });
+        const capacity = parseInt(ingredients[2], 10);
+        const durability = parseInt(ingredients[4], 10);
+        const flavor = parseInt(ingredients[6], 10);
+        const texture = parseInt(ingredients[8], 10);
+        const calories = parseInt(ingredients[10], 10);
+        this.ingredientInfos.set(name, { capacity, durability, flavor, texture, calories });
       }
     });
 
@@ -34,6 +35,7 @@ class Day15 extends Day {
 
   bakeCookie(teaspoons, names) {
     let results = [];
+    let calorie = 0;
     for (let ipIdx = 0; ipIdx < this.ingredientProperties.length; ipIdx += 1) {
       let result = 0;
       const property = this.ingredientProperties[ipIdx];
@@ -42,32 +44,44 @@ class Day15 extends Day {
         const teaspoon = teaspoons[idx];
         const ingredientInfos = this.ingredientInfos.get(name);
         const ingredientValue = ingredientInfos[property];
-        result += teaspoon * ingredientValue;
+        if (property === 'calories')
+          calorie += teaspoon * ingredientValue;
+        else
+          result += teaspoon * ingredientValue;
       }
-      result = (result < 0) ? 0 : result;
-      results.push(result);
-      if (result === 0)
-        break;
+      if (property !== 'calories') {
+        result = (result < 0) ? 0 : result;
+        results.push(result);
+        if (result === 0)
+          break;
+      }
     }
 
     const cookieValue = results.reduce((accumulator, currentValue) => accumulator * currentValue);
-    return cookieValue;
+    return { cookieValue, calorie };
   }
 
   calcPartOne() {
     let totalScore = 0;
     const names = [...this.ingredientInfos.keys()];
     this.combinations.forEach((combination) => {
-      totalScore = Math.max(totalScore, this.bakeCookie(combination, names));
+      const { cookieValue } = this.bakeCookie(combination, names);
+      totalScore = Math.max(totalScore, cookieValue);
     });
 
     return totalScore;
   }
 
   calcPartTwo() {
-    let result = 0;
+    let totalScore = 0;
+    const names = [...this.ingredientInfos.keys()];
+    this.combinations.forEach((combination) => {
+      const { cookieValue, calorie } = this.bakeCookie(combination, names);
+      if (calorie === 500)
+        totalScore = Math.max(totalScore, cookieValue);
+    });
 
-    return result;
+    return totalScore;
   }
 }
 

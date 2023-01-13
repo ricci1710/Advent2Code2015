@@ -23,13 +23,13 @@ describe('Test Class Day15', () => {
     const result = lifeDay.calcPartOne();
     expect(result).toEqual(222870);
   });
-  test.skip('calcPartTwo with demo data day15', () => {
+  test('calcPartTwo with demo data day15', () => {
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(57600000);
   });
-  test.skip('calcPartTwo with life data day15', () => {
+  test('calcPartTwo with life data day15', () => {
     const result = lifeDay.calcPartTwo();
     // You have completed Day 15!
-    expect(result).toEqual(-1);
+    expect(result).toEqual(117936);
   });
 });
