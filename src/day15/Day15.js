@@ -1,5 +1,5 @@
 import Day from '../base/Day';
-import {allCombinations} from "../utils/Uti";
+import {combine} from "../utils/Uti";
 
 class Day15 extends Day {
   ingredientInfos = new Map();
@@ -20,19 +20,16 @@ class Day15 extends Day {
         const durability = parseInt(ingredients[4]);
         const flavor = parseInt(ingredients[6]);
         const texture = parseInt(ingredients[8]);
-        this.ingredientInfos.set(name, {capacity, durability, flavor, texture});
+        this.ingredientInfos.set(name, { capacity, durability, flavor, texture });
       }
     });
 
     const names = [...this.ingredientInfos.keys()];
     this.ingredientProperties = Object.keys(this.ingredientInfos.get(names[0]));
-    this.combinations = allCombinations(names);
-  }
 
-  static arrayRotate(arr, reverse) {
-    if (reverse) arr.unshift(arr.pop());
-    else arr.push(arr.shift());
-    return arr;
+    this.combinations = combine(new Array(names.length).fill(0), 100, (arr) => {
+      return arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0) === 100;
+    });
   }
 
   bakeCookie(teaspoons, names) {
@@ -59,32 +56,9 @@ class Day15 extends Day {
 
   calcPartOne() {
     let totalScore = 0;
+    const names = [...this.ingredientInfos.keys()];
     this.combinations.forEach((combination) => {
-      const names = combination.split(',');
-
-      let start = 100 - names.length + 1;
-
-      do {
-        let rotateTeaspoons = []
-        let teaspoons = [start];
-        if (names.length > 1) {
-          for (let idx = 1; idx < names.length; idx += 1) {
-            if (idx === 1)
-              rotateTeaspoons.push(100 - start - names.length + 2);
-            else
-              rotateTeaspoons.push(1);
-          }
-
-          for (let rotateIdx = 0; rotateIdx < names.length - 1; rotateIdx += 1) {
-            const allTeaspoons = teaspoons.concat(rotateTeaspoons);
-            totalScore = Math.max(totalScore, this.bakeCookie(allTeaspoons, names));
-            rotateTeaspoons = Day15.arrayRotate(rotateTeaspoons);
-          }
-        } else {
-          totalScore = Math.max(totalScore, this.bakeCookie([start], names));
-        }
-        start -= 1;
-      } while (start > 0)
+      totalScore = Math.max(totalScore, this.bakeCookie(combination, names));
     });
 
     return totalScore;

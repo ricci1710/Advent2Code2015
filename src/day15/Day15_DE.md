@@ -40,3 +40,18 @@ multipliziert worden wäre.
 
 Wie hoch ist die Gesamtpunktzahl des bestmöglichen Kekses, den du mit den Zutaten in deiner Küche und ihren
 Eigenschaften herstellen kannst?
+
+**--- Teil zwei ---**
+
+Ihr Keksrezept wird sehr beliebt! Jemand fragt Sie, ob Sie ein weiteres Rezept machen können, das genau 500 Kalorien pro
+Keks hat (damit sie es als Mahlzeitenersatz verwenden können). Behalten Sie den Rest Ihres Gewinnverfahrens bei
+(100 Teelöffel, dieselben Zutaten, dasselbe Punktesystem).
+
+```
+Wenn Sie z. B. bei den oben genannten Zutaten stattdessen 40 Teelöffel Karamell und 60 Teelöffel Zimt gewählt hätten
+(was immer noch 100 ergibt), würde die Gesamtkalorienzahl 40*8 + 60*3 = 500 betragen. Die Gesamtpunktzahl würde jedoch
+sinken: nur 57600000, das Beste, was man unter diesen schwierigen Umständen erreichen kann.
+```
+
+Wie hoch ist die Gesamtpunktzahl des Kekses mit der höchsten Punktzahl, den Sie mit einer Gesamtkalorienzahl von 500
+herstellen können, wenn Sie die Zutaten in Ihrer Küche und ihre Eigenschaften berücksichtigen?
