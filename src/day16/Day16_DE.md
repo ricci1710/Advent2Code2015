@@ -42,3 +42,15 @@ Sie machen eine Liste mit den Dingen, an die Sie sich bei jeder Tante Sue erinne
 Liste fehlen, sind nicht null - du erinnerst dich einfach nicht an den Wert.
 
 Wie lautet die Nummer der Tante Sue, von der du das Geschenk bekommen hast?
+
+**--- Zweiter Teil ---**
+
+Als Sie den Dankesbrief abschicken wollen, fällt Ihnen etwas in der Anleitung der MFCSAM auf. Offenbar hat es einen
+veralteten Retroencabulator, und deshalb sind die Ausgaben des Geräts keine exakten Werte - einige von ihnen zeigen
+Bereiche an.
+
+Insbesondere die Werte für Katzen und Bäume zeigen an, dass es mehr als so viele sind (aufgrund des unvorhersehbaren
+nuklearen Zerfalls von Katzenhaaren und Baumpollen), während die Werte für Pomeranzen und Goldfische anzeigen, dass es
+weniger als so viele sind (aufgrund der modalen Wechselwirkung der Magnetoreluktanz).
+
+Wie hoch ist die Zahl der echten Tante Sue?
