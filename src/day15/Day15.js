@@ -1,4 +1,5 @@
 import Day from '../base/Day';
+import {allCombinations} from "../utils/Uti";
 
 class Day15 extends Day {
   ingredientInfos = new Map();
@@ -19,32 +20,13 @@ class Day15 extends Day {
         const durability = parseInt(ingredients[4]);
         const flavor = parseInt(ingredients[6]);
         const texture = parseInt(ingredients[8]);
-        this.ingredientInfos.set(name, { capacity, durability, flavor, texture });
+        this.ingredientInfos.set(name, {capacity, durability, flavor, texture});
       }
     });
 
     const names = [...this.ingredientInfos.keys()];
     this.ingredientProperties = Object.keys(this.ingredientInfos.get(names[0]));
-    this.combinations = Day15.allCombinations(names);
-  }
-
-  static allCombinations(value) {
-    const combinations = [];
-    const combinationsLength = Math.pow(2, value.length);
-
-    let temp = "";
-    for (let i = 0; i < combinationsLength; i += 1) {
-      temp = "";
-      for (let j = 0; j < value.length; j += 1) {
-        if ((i & Math.pow(2, j)))
-          temp += temp.length === 0 ? value[j] : ',' + value[j];
-      }
-      if (temp !== "") {
-        combinations.push(temp);
-      }
-    }
-
-    return combinations;
+    this.combinations = allCombinations(names);
   }
 
   static arrayRotate(arr, reverse) {
@@ -98,8 +80,7 @@ class Day15 extends Day {
             totalScore = Math.max(totalScore, this.bakeCookie(allTeaspoons, names));
             rotateTeaspoons = Day15.arrayRotate(rotateTeaspoons);
           }
-        }
-        else {
+        } else {
           totalScore = Math.max(totalScore, this.bakeCookie([start], names));
         }
         start -= 1;

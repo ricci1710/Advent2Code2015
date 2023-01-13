@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "core-js": "^3.27.0",
-    "eslint-plugin-jest": "^27.1.7"
+    "eslint-plugin-jest": "^27.1.7",
+    "itertools": "^1.7.1"
   }
 }

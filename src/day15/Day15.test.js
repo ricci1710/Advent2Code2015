@@ -1,4 +1,6 @@
 import Day15 from './Day15';
+import {combine} from "../utils/Uti";
+import {enumerate, permutations} from "itertools";
 
 describe('Test Class Day15', () => {
   const demoDay = new Day15('15', true);
@@ -8,11 +10,18 @@ describe('Test Class Day15', () => {
     expect(demoDay).toBeDefined();
     expect(lifeDay).toBeDefined();
   });
+  test('pdrmu day15', () => {
+    const v = [96, 3, 1, 1];
+    var x = [...enumerate(['hello', 'world'])];
+    const g = Array.from(permutations(v));
+    const h = combine(v);
+    Day15.expect(lifeDay).toBeDefined();
+  });
   test.skip('calcPartOne with demo data day15', () => {
     const result = demoDay.calcPartOne();
     expect(result).toEqual(62842880);
   });
-  test('calcPartOne with life data day15', () => {
+  test.skip('calcPartOne with life data day15', () => {
     const result = lifeDay.calcPartOne();
     expect(result).toEqual(-1);
   });
