@@ -10,25 +10,28 @@ class Day17 extends Day {
   /**
    * vector mit allen behältern => allcombination und dann filter auf 150 liter
    * @param literSize
-   * @returns {number}
+   * @returns {*}
    */
   calcPartOne(literSize) {
-    let result = 0;
+    const result = [];
     const combinations = allCombinations(this.storeData);
     combinations.forEach((item) => {
       const containerSizes = item.split(',');
       const sum = containerSizes.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue, 10), 0);
       if (sum === literSize)
-        result += 1;
+        result.push(containerSizes.length);
     });
     return result;
   }
 
-  calcPartTwo() {
-    let result = 0;
-    this.storeData.forEach((item) => {
-    });
-    return result;
+  calcPartTwo(literSize) {
+    const combinations = this.calcPartOne(literSize);
+    let minContainerCount = Number.MAX_VALUE;
+    combinations.forEach((containerCount) => minContainerCount = Math.min(minContainerCount, containerCount));
+    const res = combinations.reduce((accumulator, currentValue) => {
+      return (currentValue === minContainerCount) ? accumulator + 1 : accumulator;
+    }, 0);
+    return res;
   }
 }
 
