@@ -25,11 +25,11 @@ class Array2d {
    * @returns {boolean}
    */
   inRange(x, y) {
-    if (y >= this.array2d.length)
+    if (y < 0 || y >= this.array2d.length)
       return false;
 
     const rowLine = this.array2d[0];
-    return x < rowLine.length
+    return x < rowLine.length && x >= 0;
   }
 
   /**
@@ -57,13 +57,13 @@ class Array2d {
 
   /**
    * Get the row array back.
-   * @param row row
+   * @param x rowIdx
    * @returns {any[]|undefined}
    */
-  getRowLine(row) {
-    if (this.inRange(0, row) === false)
+  getRowLine(x) {
+    if (this.inRange(0, x) === false)
       return undefined;
-    return this.array2d[row];
+    return this.array2d[x];
   }
 
   /**
@@ -71,21 +71,34 @@ class Array2d {
    * @param column column
    * @returns {any[]|undefined}
    */
-  getColumnLine(column) {
-    if (this.inRange(column, 0) === false)
+  getColumnLine(y) {
+    if (this.inRange(y, 0) === false)
       return undefined;
 
     const columnLine = [];
     for (const rowLine of this.array2d) {
-      columnLine.push(rowLine[column]);
+      columnLine.push(rowLine[y]);
     }
     return columnLine;
   }
 
-  fillRowLine(row, rowLine) {
-    if (this.inRange(0, row) === false)
+  getAllNeighbors(x, y, filler) {
+    const neighbors = [];
+    neighbors.push(this.get(x, y - 1) || filler); // top
+    neighbors.push(this.get(x + 1, y - 1) || filler);
+    neighbors.push(this.get(x + 1, y) || filler); // right
+    neighbors.push(this.get(x + 1, y + 1) || filler);
+    neighbors.push(this.get(x, y + 1) || filler); // bottom
+    neighbors.push(this.get(x - 1, y + 1) || filler);
+    neighbors.push(this.get(x - 1, y) || filler); // left
+    neighbors.push(this.get(x - 1, y - 1) || filler);
+    return neighbors;
+  }
+
+  fillRowLine(x, rowLine) {
+    if (this.inRange(0, x) === false)
       return;
-    this.array2d[row] = rowLine;
+    this.array2d[x] = rowLine;
   }
 
   fillColumnLine(column, columnLine) {
