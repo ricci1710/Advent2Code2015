@@ -51,17 +51,17 @@ class Day16 extends Day {
         const memory = memories[idy].split(':');
         const key = memory[0].trim();
         const value = parseInt(memory[1], 10);
-        if ((key === 'cat' || key === 'tree') && value < this.sueMemories.get(key))
+        if ((key === 'cat' || key === 'tree') && value > this.sueMemories.get(key))
           found += 1;
-        else if ((key === 'pomeranians' || key === 'goldfish') && value > this.sueMemories.get(key))
+        else if ((key === 'pomeranians' || key === 'goldfish') && value < this.sueMemories.get(key))
           found += 1;
-        else if (value === this.sueMemories.get(key) || (value === 0 && this.sueMemories.get(key) > 0))
+        else if (value === this.sueMemories.get(key) && value !== 0)
           found += 1;
       }
       if (found === memories.length)
         result = idx;
     }
-    return result;
+    return result; // Sue 241: cars: 2, pomeranians: 1, samoyeds: 2
   }
 }
 

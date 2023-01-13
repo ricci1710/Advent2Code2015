@@ -12,7 +12,7 @@ describe('Test Class Day16', () => {
   });
   test('calcPartTwo with life data day16', () => {
     const result = lifeDay.calcPartTwo();
-    // You have completed Day 16! 477^
-    expect(result).toEqual(-1);
+    // You have completed Day 16! 477^ 129v
+    expect(result).toEqual(241);
   });
 });
