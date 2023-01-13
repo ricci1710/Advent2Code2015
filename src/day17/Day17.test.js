@@ -16,12 +16,12 @@ describe('Test Class Day17', () => {
     const result = lifeDay.calcPartOne(150);
     expect(result).toEqual(654);
   });
-  test.skip('calcPartTwo with demo data day17', () => {
-    const result = demoDay.calcPartTwo();
+  test('calcPartTwo with demo data day17', () => {
+    const result = demoDay.calcPartTwo(25);
     expect(result).toEqual(3);
   });
   test.skip('calcPartTwo with life data day17', () => {
-    const result = lifeDay.calcPartTwo();
+    const result = lifeDay.calcPartTwo(150);
     // You have completed Day 17!
     expect(result).toEqual(-1);
   });

@@ -25,5 +25,3 @@ Möglichkeiten gibt es, diese Anzahl von Behältern zu füllen und trotzdem gena
 
 Im obigen Beispiel betrug die Mindestanzahl der Behälter zwei. Es gab drei Möglichkeiten, diese Anzahl von Behältern zu
 verwenden, also wäre die Antwort hier 3.
-
-Übersetzt mit www.DeepL.com/Translator (kostenlose Version)
