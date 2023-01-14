@@ -17,7 +17,15 @@ class Day18 extends Day {
     }
   }
 
-  calcPartOne(steps) {
+  switchOnEdges() {
+    const size = this.playground.size.x - 1;
+    this.playground.set(0, 0, '#');
+    this.playground.set(0, size, '#');
+    this.playground.set(size, 0, '#');
+    this.playground.set(size, size, '#');
+  }
+
+  calcPartOne(steps, partOne = true) {
     let result = 0;
     const size = this.playground.size;
     do {
@@ -38,6 +46,8 @@ class Day18 extends Day {
         }
       }
       this.playground = temp;
+      if (partOne === false)
+        this.switchOnEdges();
       steps -= 1;
     } while (steps > 0)
 
@@ -51,9 +61,8 @@ class Day18 extends Day {
   }
 
   calcPartTwo(steps) {
-    let result = 0;
-    this.storeData.forEach((item) => {
-    });
+    this.switchOnEdges();
+    let result = this.calcPartOne(steps, false);
     return result;
   }
 }

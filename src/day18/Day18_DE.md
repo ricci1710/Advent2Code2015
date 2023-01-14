@@ -80,3 +80,62 @@ Nach 4 Schritten sind in diesem Beispiel vier Lichter an.
 ```
 
 Wie viele Lichter sind in Ihrem Gitter von 100x100 Lichtern bei Ihrer Ausgangskonfiguration nach 100 Schritten an?
+
+--- Teil 2 ---
+Du drehst die Anleitung um; der Weihnachtsmann erklärt dir, dass dies alles nur eine Umsetzung von Conways Spiel des
+Lebens ist. Zumindest war es das, bis du feststellst, dass mit dem Lichtergitter, das du gekauft hast, etwas nicht
+stimmt: vier Lichter, eines in jeder Ecke, sind an und können nicht ausgeschaltet werden. Das obige Beispiel läuft in
+Wirklichkeit folgendermaßen ab:
+
+Anfangszustand:
+##.#.#
+...##.
+#....#
+..#...
+#.#..#
+####.#
+
+Nach 1 Schritt:
+#.##.#
+####.#
+...##.
+......
+#...#.
+#.####
+
+Nach 2 Schritten:
+#..#.#
+#....#
+.#.##.
+...##.
+.#..##
+##.###
+
+Nach 3 Schritten:
+#...##
+####.#
+..##.#
+......
+##....
+####.#
+
+Nach 4 Schritten:
+#.####
+#....#
+...#..
+.##...
+#.....
+#.#..#
+
+Nach 5 Schritten:
+##.###
+.##..#
+.##...
+.##...
+#.#...
+##...#
+
+Nach 5 Schritten sind in diesem Beispiel nun 17 Lichter eingeschaltet.
+
+Wie viele Lichter sind in Ihrem Gitter von 100x100 Lichtern bei Ihrer Ausgangskonfiguration, aber mit den vier Ecken
+immer im eingeschalteten Zustand, nach 100 Schritten eingeschaltet?
