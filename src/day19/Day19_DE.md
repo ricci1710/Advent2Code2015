@@ -56,10 +56,12 @@ H => OH
 O => HH
 
 Wenn du HOH machen möchtest, beginnst du mit e und nimmst dann die folgenden Ersetzungen vor:
+HOH -> eOH
+H -> e => O, um O zu erhalten
+O -> O => HH, um HH zu erhalten
+H -> H => OH (am zweiten H), um HOH zu erhalten
 
-e => O, um O zu erhalten
-O => HH, um HH zu erhalten
-H => OH (am zweiten H), um HOH zu erhalten
+Ergebnis: HOOH
 
 Man könnte also nach 3 Schritten HOH herstellen. Das Lieblingsmolekül des Weihnachtsmanns, HOHOHO, kann in 6 Schritten
 hergestellt werden.

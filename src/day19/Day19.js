@@ -28,7 +28,7 @@ class Day19 extends Day {
   calcPartOne() {
     const moleculeSequences = new Set();
     let replacePosition;
-    // suche zeichenkette erstze diese => 1. Kombination. von Ausgangszustand suche wieder die zeichenkette ab der
+    // suche Zeichenkette, ersetze diese => 1. Kombination. von Ausgangszustand suche wieder die Zeichenkette ab der
     // letzten position => 2. Kombination => Kombinationen im Set abspeichern da keine Mehrfachtreffer erlaubt sind.
     for (let idx = 0; idx < this.moleculesTable.length; idx += 1) {
       const molecules = this.moleculesTable[idx].split('=>');
@@ -46,10 +46,7 @@ class Day19 extends Day {
   }
 
   calcPartTwo() {
-    let result = 0;
-    this.storeData.forEach((item) => {
-    });
-    return result;
+    return this.calcPartOne();
   }
 }
 

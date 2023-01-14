@@ -22,6 +22,7 @@ describe('Test Class Day19', () => {
     expect(result).toEqual(518);
   });
   test('calcPartTwo with demo data day19 -> HOH', () => {
+    demoDay.moleculesTable = ['e => H', 'e => O', 'H => HO', 'H => OH', 'O => HH'];
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(3);
   });
