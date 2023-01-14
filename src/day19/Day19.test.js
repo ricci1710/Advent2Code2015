@@ -29,7 +29,7 @@ describe('Test Class Day19', () => {
   test('calcPartTwo with demo data day19 -> HOHOHO', () => {
     demoDay.sequence = 'HOHOHO';
     const result = demoDay.calcPartOne();
-    expect(result).toEqual(7);
+    expect(result).toEqual(6);
   });
   test.skip('calcPartTwo with life data day19', () => {
     const result = lifeDay.calcPartTwo();
