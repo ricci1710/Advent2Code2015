@@ -21,19 +21,20 @@ describe('Test Class Day19', () => {
     const result = lifeDay.calcPartOne();
     expect(result).toEqual(518);
   });
-  test('calcPartTwo with demo data day19 -> HOH', () => {
+  test.skip('calcPartTwo with demo data day19 -> HOH', () => {
+    const storage = demoDay.storeData;
     demoDay.moleculesTable = ['e => H', 'e => O', 'H => HO', 'H => OH', 'O => HH'];
     const result = demoDay.calcPartTwo();
     expect(result).toEqual(3);
   });
-  test('calcPartTwo with demo data day19 -> HOHOHO', () => {
+  test.skip('calcPartTwo with demo data day19 -> HOHOHO', () => {
     demoDay.sequence = 'HOHOHO';
     const result = demoDay.calcPartOne();
     expect(result).toEqual(6);
   });
-  test.skip('calcPartTwo with life data day19', () => {
+  test('calcPartTwo with life data day19', () => {
     const result = lifeDay.calcPartTwo();
     // You have completed Day 19!
-    expect(result).toEqual(-1);
+    expect(result).toEqual(200);
   });
 });

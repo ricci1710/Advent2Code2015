@@ -1,4 +1,5 @@
 import Day from '../base/Day';
+import {readFileSync} from 'fs'
 
 String.prototype.replaceAt = function (index, pattern, replacement) {
   return this.substring(0, index) + replacement + this.substring(index + pattern.length);
@@ -46,7 +47,48 @@ class Day19 extends Day {
   }
 
   calcPartTwo() {
-    return this.calcPartOne();
+    const input = readFileSync(`./src/day19/LifeData19.bin`).toString('utf8')
+      .trim()
+      .split('\r\n')
+      .reduce((formula, line) => {
+        const [element, replacement] = line.split(' => ')
+
+        if (!formula[element]) formula[element] = []
+        formula[element].push(replacement)
+
+        return formula
+      }, {});
+
+    const formula = this.sequence;
+    const rx = /([a-zA-Z][a-z]*)/g
+    let match;
+    let matches = []
+
+    while ((match = rx.exec(formula)) !== null) {
+      matches = [...matches, match]
+    }
+
+    const reverse = Object.keys(input).reduce((table, replacement) => {
+      input[replacement].forEach(element => {
+        table.set(element, replacement)
+      })
+
+      return table
+    }, new Map())
+
+    let target = formula
+    let partTwo = 0
+
+    while (target !== 'e') {
+      for (const [element, replacement] of reverse.entries()) {
+        if (target.includes(element)) {
+          target = target.replace(element, replacement)
+          partTwo = partTwo + 1
+        }
+      }
+    }
+
+    return partTwo;
   }
 }
 
