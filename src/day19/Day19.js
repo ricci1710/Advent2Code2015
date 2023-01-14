@@ -1,7 +1,10 @@
 import Day from '../base/Day';
 
+String.prototype.replaceAt = function (index, pattern, replacement) {
+  return this.substring(0, index) + replacement + this.substring(index + pattern.length);
+}
+
 class Day19 extends Day {
-  moleculeSequences = new Set();
   moleculesTable = [];
   sequence;
 
@@ -23,18 +26,23 @@ class Day19 extends Day {
   }
 
   calcPartOne() {
-    let result = 0;
+    const moleculeSequences = new Set();
+    let replacePosition;
     // suche zeichenkette erstze diese => 1. Kombination. von Ausgangszustand suche wieder die zeichenkette ab der
     // letzten position => 2. Kombination => Kombinationen im Set abspeichern da keine Mehrfachtreffer erlaubt sind.
     for (let idx = 0; idx < this.moleculesTable.length; idx += 1) {
       const molecules = this.moleculesTable[idx].split('=>');
-      console.log(molecules);
-      const searchValue = molecules[0];
-      const replacer = molecules[1];
-      const moleculeSequence = this.sequence.replace(searchValue, replacer);
-      this.moleculeSequences.add(moleculeSequence);
+      const pattern = molecules[0].trim();
+      const replacer = molecules[1].trim();
+
+      replacePosition = this.sequence.indexOf(pattern);
+      while (replacePosition !== -1) {
+        const moleculeSequence = this.sequence.replaceAt(replacePosition, pattern, replacer);
+        moleculeSequences.add(moleculeSequence);
+        replacePosition = this.sequence.indexOf(pattern, replacePosition + 1);
+      }
     }
-    return result;
+    return moleculeSequences.size;
   }
 
   calcPartTwo() {

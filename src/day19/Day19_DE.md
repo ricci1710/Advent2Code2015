@@ -38,3 +38,32 @@ Die Maschine ersetzt ohne Rücksicht auf die umgebenden Zeichen. Bei der Zeichen
 Ihre Rätseleingabe beschreibt alle möglichen Ersetzungen und am Ende das Medikamentenmolekül, für das Sie die Maschine
 kalibrieren müssen. Wie viele verschiedene Moleküle können durch die verschiedenen Ersetzungen des Medikamentenmoleküls
 erzeugt werden?
+
+**--- Zweiter Teil ---**
+
+Nun, da die Maschine kalibriert ist, kannst du mit der Herstellung von Molekülen beginnen.
+
+Die Herstellung von Molekülen beginnt immer mit einem einzigen Elektron, e, und der Anwendung von Ersetzungen, eine nach
+der anderen, genau wie die während der Kalibrierung.
+
+```
+Nehmen wir zum Beispiel an, Sie haben die folgenden Ersetzungen:
+
+e => H
+e => O
+H => HO
+H => OH
+O => HH
+
+Wenn du HOH machen möchtest, beginnst du mit e und nimmst dann die folgenden Ersetzungen vor:
+
+e => O, um O zu erhalten
+O => HH, um HH zu erhalten
+H => OH (am zweiten H), um HOH zu erhalten
+
+Man könnte also nach 3 Schritten HOH herstellen. Das Lieblingsmolekül des Weihnachtsmanns, HOHOHO, kann in 6 Schritten
+hergestellt werden.
+```
+
+Wie lange dauert es, das Medikament herzustellen? Wie viele Schritte sind nötig, um von e zum Medikamentenmolekül zu
+gelangen, wenn man die verfügbaren Ersatzstoffe und das Medikamentenmolekül in der Rätseleingabe berücksichtigt?
