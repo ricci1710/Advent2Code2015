@@ -13,6 +13,6 @@ describe('Test Class Day20', () => {
   test('calcPartTwo with life data day20', () => {
     const result = lifeDay.calcPartTwo();
     // You have completed Day 20!
-    expect(result).toEqual(-1);
+    expect(result).toEqual(705600);
   });
 });
