@@ -32,3 +32,12 @@ bekommt 70 Geschenke, weil es von den Elfen 1, 2 und 4 besucht wird, also insges
 
 Welches ist die niedrigste Hausnummer des Hauses, das mindestens so viele Geschenke erhält wie die Zahl in deiner
 Rätseleingabe?
+
+**--- Zweiter Teil ---**
+
+Die Elfen beschließen, dass sie nicht unendlich viele Häuser besuchen wollen. Stattdessen will jeder Elf aufhören,
+nachdem er 50 Häuser mit Geschenken beliefert hat. Um dies auszugleichen, beschließen sie, in jedem Haus Geschenke
+auszuliefern, die dem Elffachen ihrer Anzahl entsprechen.
+
+Wie lautet die neue niedrigste Hausnummer des Hauses, das mindestens so viele Geschenke erhält wie die Zahl in Ihrer
+Rätseleingabe?

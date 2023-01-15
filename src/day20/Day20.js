@@ -13,11 +13,24 @@ class Day20 extends Day {
    * @returns {number}
    */
   calcPartOne() {
-    let houseNumber = 0;
     let presents = 0;
+    const moduloNumbers = [];
+
+    // Vorinitialisierung
+    for (let x = 0; x < 660000; x += 1)
+      moduloNumbers.push(x);
+    let houseNumber = moduloNumbers.length;
+
     do {
-      presents += 10;
+      presents = 0;
       houseNumber += 1;
+      moduloNumbers.push(houseNumber);
+
+      for (let idx = 0; idx < moduloNumbers.length; idx += 1) {
+        const moduloNumber = moduloNumbers[idx];
+        if (houseNumber % moduloNumber === 0)
+          presents += 10 * moduloNumber;
+      }
     } while (presents < this.presentCount);
 
     return houseNumber;
