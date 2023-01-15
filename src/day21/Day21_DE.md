@@ -19,7 +19,7 @@ Punkt.
 
 Die Schadens- und Rüstungspunkte beginnen beide bei Null. Sie können durch den Kauf von Gegenständen im Tausch gegen
 Gold erhöht werden. Du
-beginnt ohne Gegenstände und hat so viel Gold, wie er braucht. Dein Gesamtschaden oder deine Rüstung ist gleich der
+beginnst ohne Gegenstände und hat so viel Gold, wie er braucht. Dein Gesamtschaden oder deine Rüstung ist gleich der
 Summe dieser Werte
 aus all deinen Gegenständen. Du hast 100 Trefferpunkte.
 
