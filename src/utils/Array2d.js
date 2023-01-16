@@ -1,6 +1,8 @@
 class Array2d {
   constructor(size, fillValue) {
-    if (typeof size === "number") // YYxYY
+    if (!size)
+      this.array2d = new Array();
+    else if (typeof size === "number") // YYxYY
       this.array2d = new Array(size).fill(fillValue).map(() => new Array(size).fill(fillValue));
     else // YYxZZ
       this.array2d = new Array(size.y).fill(fillValue).map(() => new Array(size.x).fill(fillValue));
@@ -11,7 +13,7 @@ class Array2d {
    * @returns {{x: number, y: number}|{x: number, y: number}}
    */
   get size() {
-    return this.array2d && this.array2d[0] ? {x: this.array2d[0].length, y: this.array2d.length} : {x: 0, y: 0};
+    return this.array2d && this.array2d[0] ? { x: this.array2d[0].length, y: this.array2d.length } : { x: 0, y: 0 };
   }
 
   get sizeToString() {
@@ -99,6 +101,10 @@ class Array2d {
     if (this.inRange(0, x) === false)
       return;
     this.array2d[x] = rowLine;
+  }
+
+  addRow(row) {
+    this.array2d.push(row);
   }
 
   fillColumnLine(column, columnLine) {
