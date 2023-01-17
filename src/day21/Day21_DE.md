@@ -71,3 +71,11 @@ In diesem Szenario gewinnt der Spieler! (Knapp.)
 
 Du hast 100 Trefferpunkte. Die tatsächlichen Werte des Endgegners stehen in deiner Rätseleingabe. Wie viel Gold kannst
 du am wenigsten ausgeben und den Kampf trotzdem gewinnen?
+
+**--- Zweiter Teil ---**
+
+Es stellt sich heraus, dass der Ladenbesitzer mit dem Boss zusammenarbeitet und dich dazu überreden kann, alle
+Gegenstände zu kaufen, die er will. Die anderen Regeln gelten immer noch, und er hat immer noch nur ein Exemplar von
+jedem Gegenstand.
+
+Wie viel Gold kann man maximal ausgeben und den Kampf trotzdem verlieren?
