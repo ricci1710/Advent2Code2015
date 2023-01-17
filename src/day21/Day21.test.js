@@ -8,8 +8,12 @@ describe('Test Class Day21', () => {
     expect(demoDay).toBeDefined();
     expect(lifeDay).toBeDefined();
   });
+  test.skip('calcPartOne with demo data day21', () => {
+    const result = demoDay.calcPartOne({life: 8, damage: 5, armor: 5});
+    expect(result).toEqual(2);
+  });
   test('calcPartOne with life data day21', () => {
-    const result = lifeDay.calcPartOne();
+    const result = lifeDay.calcPartOne({life: 100});
     expect(result).toEqual(-1);
   });
   test('calcPartTwo with demo data day21', () => {

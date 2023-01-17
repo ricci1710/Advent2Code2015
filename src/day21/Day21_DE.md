@@ -17,7 +17,7 @@ von 3, verliert der Verteidiger 5 Trefferpunkte. Hätte der Verteidiger eine Rü
 immer noch 1 Treffer
 Punkt.
 
-Die Schadens- und Rüstungspunkte beginnen beide bei Null. Sie können durch den Kauf von Gegenständen im Tausch gegen
+Die Schadens- und Rüstungspunkte beginnen beide bei 0. Sie können durch den Kauf von Gegenständen im Tausch gegen
 Gold erhöht werden. Du
 beginnst ohne Gegenstände und hat so viel Gold, wie er braucht. Dein Gesamtschaden oder deine Rüstung ist gleich der
 Summe dieser Werte
@@ -70,4 +70,4 @@ In diesem Szenario gewinnt der Spieler! (Knapp.)
 ```
 
 Du hast 100 Trefferpunkte. Die tatsächlichen Werte des Endgegners stehen in deiner Rätseleingabe. Wie viel Gold kannst
-du am wenigsten ausgeben, ausgeben und den Kampf trotzdem gewinnen?
+du am wenigsten ausgeben und den Kampf trotzdem gewinnen?
