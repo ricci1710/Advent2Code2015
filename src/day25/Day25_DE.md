@@ -65,3 +65,13 @@ Die Verbindung wird unterbrochen.
 
 Der Weihnachtsmann sieht nervös aus. Ihre Rätseleingabe enthält die Nachricht auf der Konsole der Maschine. Welchen Code
 geben Sie der Maschine?
+
+**--- Zweiter Teil ---**
+
+Die Maschine erwacht zum Leben, dann verstummt sie wieder. Es piept. "Unzureichender Treibstoff", zeigt die Konsole
+an. "Fünfzig Sterne sind erforderlich, um fortzufahren. Ein Stern ist verfügbar."
+
+... "ein Stern ist verfügbar"? Du überprüfst den Treibstofftank, und tatsächlich, ein einsamer Stern liegt am Boden und
+wartet auf seine Freunde. Sieht aus, als müsstest du selbst für 49 sorgen.
+
+Du hast aber nicht genug Sterne, um die Maschine zu starten. Du brauchst noch 4.
