@@ -16,17 +16,18 @@ On each of your turns, you must select one of your spells to cast. If you cannot
 Spells cost mana; you start with 500 mana, but have no maximum limit. You must have enough mana to cast a spell, and its
 cost is immediately deducted when you cast it. Your spells are Magic Missile, Drain, Shield, Poison, and Recharge.
 
-Magic Missile costs 53 mana. It instantly does 4 damage.
-Drain costs 73 mana. It instantly does 2 damage and heals you for 2 hit points.
-Shield costs 113 mana. It starts an effect that lasts for 6 turns. While it is active, your armor is increased by 7.
-Poison costs 173 mana. It starts an effect that lasts for 6 turns. At the start of each turn while it is active, it
-deals the boss 3 damage.
-Recharge costs 229 mana. It starts an effect that lasts for 5 turns. At the start of each turn while it is active, it
-gives you 101 new mana.
+- Magic Missile costs 53 mana. It instantly does 4 damage.
+- Drain costs 73 mana. It instantly does 2 damage and heals you for 2 hit points.
+- Shield costs 113 mana. It starts an effect that lasts for 6 turns. While it is active, your armor is increased by 7.
+- Poison costs 173 mana. It starts an effect that lasts for 6 turns. At the start of each turn while it is active, it
+  deals the boss 3 damage.
+- Recharge costs 229 mana. It starts an effect that lasts for 5 turns. At the start of each turn while it is active, it
+  gives you 101 new mana.
+
 Effects all work the same way. Effects apply at the start of both the player's turns and the boss' turns. Effects are
-created with a timer (the number of turns they last); at the start of each turn, after they apply any effect they have,
-their timer is decreased by one. If this decreases the timer to zero, the effect ends. You cannot cast a spell that
-would start an effect which is already active. However, effects can be started on the same turn they end.
+created with a timer (the number of turns they last); at the start of each turn, after they apply any effect they
+have, their timer is decreased by one. If this decreases the timer to zero, the effect ends. You cannot cast a spell
+that would start an effect which is already active. However, effects can be started on the same turn they end.
 
 ```
 For example, suppose the player has 10 hit points and 250 mana, and that the boss has 13 hit points and 8 damage:
@@ -56,6 +57,9 @@ For example, suppose the player has 10 hit points and 250 mana, and that the bos
 - Player has 2 hit points, 0 armor, 24 mana
 - Boss has 3 hit points
   Poison deals 3 damage. This kills the boss, and the player wins.
+  ```
+
+```
   Now, suppose the same initial conditions, except that the boss has 14 hit points instead:
 
 -- Player turn --
